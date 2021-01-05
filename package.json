@@ -1,0 +1,46 @@
+{
+	"name": "@rebelstack-io/metaflux-cli",
+	"version": "1.0.1",
+	"description": "Metaflux projects client",
+	"main": "index.js",
+	"preferGlobal": true,
+	"bin": {
+		"metaflux-cli": "index.js"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rebelstackio/docstrap.git"
+	},
+	"keywords": [
+		"nodejs",
+		"metaflux",
+		"generator"
+	],
+	"contributors": [
+		{
+			"name": "pablolimo",
+			"url": "https://github.com/pablolimo"
+		},
+		{
+			"name": "Osmar Reyes",
+			"email": "osmarreyesst@gmail.com",
+			"url": "https://github.com/oreyes1991"
+		}
+	],
+	"author": "",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/rebelstackio/docstrap/issues"
+	},
+	"homepage": "https://github.com/rebelstackio/docstrap#readme",
+	"dependencies": {
+		"commander": "^5.0.0",
+		"fs-extra": "^9.0.0",
+		"gradient-string": "^1.2.0",
+		"shelljs": "^0.8.4",
+		"showdown": "^1.9.1"
+	}
+}
