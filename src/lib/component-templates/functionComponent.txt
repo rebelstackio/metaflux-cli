@@ -1,0 +1,12 @@
+import { Div } from '@rebelstack-io/metaflux';
+import './index.css';
+/**
+* hint: you can import Span, P, Table, Input and more check Metaflux docs
+* hint: the function component can recive a String, Array, Function as content
+*/
+const %{c_name} = () => Div({/* props here */}, () => {
+	return Div({}, 'Example')
+});
+
+
+export { %{c_name} }

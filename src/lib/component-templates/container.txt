@@ -1,0 +1,14 @@
+import { MetaContainer, Div } from '@rebelstack-io/metaflux';
+import './index.css';
+import '../../handlers';
+
+class %{c_name} extends MetaContainer {
+	// eslint-disable-next-line class-method-use-this
+	render () {
+		return Div({},[
+			Div({}, 'Example')
+		])
+	}
+}
+
+window.customElements.define('%{c_custom_name}', %{c_name});
