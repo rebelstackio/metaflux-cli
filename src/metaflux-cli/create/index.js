@@ -1,7 +1,6 @@
 (() => {
 	const options = require('./options');
 	const { writeTemplate } = require('../../lib');
-	const componentSubCommand = require('../component');
 	/**
 	 * SubCommand Create
 	 */

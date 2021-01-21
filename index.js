@@ -5,9 +5,8 @@
 const gradient = require('gradient-string');
 const program = require('commander');
 const metafluxCli = require('./src/metaflux-cli');
-
+// Program version.
 program.version(require('./package.json').version);
-program.command('metaflux-cli [create, dir]');
 
 const title = '#####__METAFLUX-CLI__#####'
 console.log('\n' + gradient.rainbow(title) + '\n');
