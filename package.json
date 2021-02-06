@@ -8,7 +8,7 @@
 		"metaflux-cli": "index.js"
 	},
 	"scripts": {
-		"test": "jest"
+		"test": "jest --coverage"
 	},
 	"repository": {
 		"type": "git",
@@ -36,10 +36,6 @@
 		"url": "https://github.com/rebelstackio/docstrap/issues"
 	},
 	"homepage": "https://github.com/rebelstackio/docstrap#readme",
-	"jest": {
-		"verbose": true,
-		"collectCoverage": true
-	},
 	"dependencies": {
 		"commander": "^5.0.0",
 		"fs-extra": "^9.0.0",
