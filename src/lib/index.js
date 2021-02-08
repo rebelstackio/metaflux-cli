@@ -11,6 +11,7 @@
 		let path = dir || _currenBase;
 		if(fs.existsSync(path + '/' + name)) {
 			console.log('#>- path exist, won\'t be override');
+			process.exit(1);
 		} else {
 			try {
 				shell.cd(path);

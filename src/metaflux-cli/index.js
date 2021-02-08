@@ -1,25 +1,15 @@
 (() => {
-	const _options = require('./options');
-	const { writeTemplate } = require('../lib');
+	const createSubCommand = require('./create');
+	const componentSubCommand = require('./component');
+
 
 	function metafluxCli(program) {
-		const commandObject = program
-		.description('Complete Metaflux project manager, see the usage with metaflux-cli --help')
-		//.usage('[create, dir]');
-
-		_options.forEach(option => {
-			commandObject.option(...option.command);
-		});
-
-		commandObject.action(async () => {
-			let { create, dir } = commandObject;
-			if (create) {
-				create = typeof create === 'boolean' ? undefined : create;
-				console.log(create);
-				await writeTemplate(dir, create)
-			}
-			process.exit(0);
-		});
+		program.description('Complete Metaflux project manager, see the usage with metaflux-cli --help')
+		.usage('metaflux-cli <command> [options]')
+		// create sub command
+		createSubCommand(program);
+		// Create new component sub-command
+		componentSubCommand(program);
 	}
 
 	module.exports = metafluxCli;

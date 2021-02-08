@@ -1,0 +1,31 @@
+import { MetaComponent, Div } from '@rebelstack-io/metaflux';
+import './index.css';
+
+class %{c_name} extends MetaComponent {
+	/**
+	 * MetaComponent constructor needs storage.
+	 */
+	constructor () {
+		super(global.storage);
+	}
+	// eslint-disable-next-line class-method-use-this
+	render () {
+		/**
+		 * hint: you can import Span, P, Table, Input and more check Metaflux docs
+		 */
+		return Div();
+	}
+
+	/**
+	 * Handle Events in a organized way.
+	 */
+	handleStoreEvents () {
+		return {
+			/**
+			 * TODO: Handle your store events here
+			 */
+		};
+	}
+}
+
+window.customElements.define('%{c_custom_name}', %{c_name});
