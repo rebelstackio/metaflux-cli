@@ -5,7 +5,7 @@
 	/**
 	 * Start Dev server sub-command
 	 */
-	function run (program) {
+	async function run (program) {
 		const commandObject = program
 		options.forEach(option => {
 			commandObject.option(...option.command);
@@ -19,13 +19,8 @@
 				await shell.exec('npm install', { silent: true });
 				console.log('#>- Done')
 			}
-			const {stdout} =  shell.exec('npm start', { silent: true, async: true });
 			console.log('#>- Start / watch Dev Server you can end it with (ctrl + c)');
-			if (!silent) {
-				stdout.on('data', (chunk) => {
-					console.log(chunk);
-				});
-			}
+			await shell.exec('npm start', { silent: silent });
 		});
 	}
 
