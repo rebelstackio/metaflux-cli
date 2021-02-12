@@ -33,15 +33,14 @@
 	"author": "",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/rebelstackio/docstrap/issues"
+		"url": "https://github.com/rebelstackio/metaflux-cli/issues"
 	},
-	"homepage": "https://github.com/rebelstackio/docstrap#readme",
+	"homepage": "https://github.com/rebelstackio/metaflux-cli#readme",
 	"dependencies": {
-		"commander": "^5.0.0",
-		"fs-extra": "^9.0.0",
+		"commander": "^7.0.0",
+		"fs-extra": "^9.1.0",
 		"gradient-string": "^1.2.0",
-		"shelljs": "^0.8.4",
-		"showdown": "^1.9.1"
+		"shelljs": "^0.8.4"
 	},
 	"devDependencies": {
 		"jest": "^26.6.3"

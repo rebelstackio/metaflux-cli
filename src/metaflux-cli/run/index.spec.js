@@ -1,7 +1,13 @@
-const shell = require('shelljs');
 const run = require('./index');
+const shell = require('shelljs');
 
-shell.cd('./unit_test_tmp/test_new_project/');
+jest.mock('shelljs');
+shell.exec = jest.fn();
+const execMock = shell.exec;
+
+beforeEach(() => {
+	execMock.mockReset();
+});
 
 function cli(silent) {
 	// execute relative to this file
@@ -16,15 +22,9 @@ function cli(silent) {
 	}))
 }
 
-
-it('Attempt 2', async (done) => {
-	const spy = jest.spyOn(console, 'log');
-	cli();
-	console.warn(spy.mock.calls);
-	expect(spy.mock.calls).toEqual([[
-		"#>- Start / watch Dev Server you can end it with (ctrl + c)",
-	]]);
-	setTimeout(() => { done() }, 5000)
-	//expect(process.exit).toHaveBeenCalledWith(0);
+it('should call npm start if dependencies are installed', () => {
+	cli(true);
+	//expect(resp).toEqual(null);
+	expect(execMock).toHaveBeenCalledTimes(1);
+	expect(execMock).toHaveBeenCalledWith('npm start', {"silent": true});
 });
-

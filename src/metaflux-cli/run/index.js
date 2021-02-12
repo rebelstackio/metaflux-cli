@@ -15,7 +15,7 @@
 		.action(async function () {
 			const { silent } = commandObject;
 			if(!fs.existsSync('node_modules/')) {
-				console.log('#>- Installing dependencies, this may take a couple of minutes');
+				console.log('#>- Installing dependencies, this may take a couple of minutes...');
 				await shell.exec('npm install', { silent: true });
 				console.log('#>- Done')
 			}
