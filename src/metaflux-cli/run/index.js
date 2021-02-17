@@ -13,14 +13,18 @@
 		commandObject.command('run')
 		.description('Run your project in Dev mode')
 		.action(async function () {
-			const { silent } = commandObject;
+			const { silent, port } = commandObject;
 			if(!fs.existsSync('node_modules/')) {
 				console.log('#>- Installing dependencies, this may take a couple of minutes...');
 				await shell.exec('npm install', { silent: true });
 				console.log('#>- Done')
 			}
 			console.log('#>- Start / watch Dev Server you can end it with (ctrl + c)');
-			await shell.exec('npm start', { silent: silent });
+			if (!port) {
+				await shell.exec('./node_modules/.bin/webpack-dev-server  --mode development', { silent: silent });
+			} else {
+				await shell.exec(`./node_modules/.bin/webpack-dev-server  --mode development --port ${port}`, { silent: silent });
+			}
 		});
 	}
 
