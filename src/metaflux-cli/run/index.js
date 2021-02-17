@@ -12,7 +12,7 @@
 		});
 		commandObject.command('run')
 		.description('Run your project in Dev mode')
-		.action(async function () {
+		.action(async () => {
 			const { silent, port } = commandObject;
 			if(!fs.existsSync('node_modules/')) {
 				console.log('#>- Installing dependencies, this may take a couple of minutes...');

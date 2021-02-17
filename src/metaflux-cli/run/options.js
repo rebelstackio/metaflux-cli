@@ -6,6 +6,6 @@ module.exports = [
 	},
 	{
 		name: 'port',
-		command: ['-p, --port', 'set the port for subcommand run']
+		command: ['-p, --port <port>', 'set the port for subcommand run']
 	}
 ]
